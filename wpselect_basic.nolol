@@ -1,0 +1,39 @@
+define WP_SIZE=4
+define WP_FORWARD=1
+define WP_BACKWARD=-1
+macro popWP(str,result) block
+    temp=str
+        str-- 
+        str--
+        str--
+        str--
+    result=temp-str
+end
+
+include "std/string"
+$string_pop(a,b)$
+
+define :waypoints=:wp
+define :currentWaypointS=:cws
+define :mode=:lm
+front=:waypoints
+back=""
+popWP(front,current)
+:currentWaypointS=current
+pos=0
+while 1==1 do
+    if (front=="" and :mode==WP_FORWARD) or (back=="" and :mode==WP_BACKWARD) then
+        :mode=0
+    end
+    if :mode==WP_FORWARD then
+        back+=current
+        popWP(front,current)
+        :currentWaypointS=current
+    end
+    if :mode==WP_BACKWARD then
+        front+=current
+        popWP(back,current)
+        :currentWaypointS=current
+    end
+        :mode=0
+end
