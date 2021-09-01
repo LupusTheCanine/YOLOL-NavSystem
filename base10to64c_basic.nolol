@@ -1,0 +1,19 @@
+//0 1 2 3 4 5 6 7
+//8 9 < > A B C D
+//E F G H I J K L
+//M N O P Q R S T
+//U V W X Y Z a b
+//c d e f g h i j
+//k l m n o p q r
+//s t u v w x y z
+include "std/logic"
+:input = 63
+input = 8388608 - :input / 1000 * 1000  //remove decimal and convert to decimal coded 64 complement with
+input=input*(input<16777216)*(input>0)+16777215*(input>=16777215) //clamp input to from 0 to 64^4-1
+counter = 4
+output=""
+while counter-- do
+    digit = input - input / 64000 * 64000 //intiger modulo on basic chip
+    input= input / 64000 * 1000 //intiger division by 64 on basic chip
+    
+end
