@@ -1,0 +1,9 @@
+a=b c=a-b--
+d=:wp e="" f=d d-- d-- d-- d-- d-- d-- d-- d-- d-- d-- d-- d-- d-- d--
+d-- d-- d-- d-- d-- d-- g=f-d :cws=g h=0
+if(d=="" and :lm==1) or (e=="" and :lm==-1)then:lm=0end
+if:lm!=1thengoto7end e+=g i=d d-- d-- d-- d-- d-- d-- d-- d-- d-- d--
+d-- d-- d-- d-- d-- d-- d-- d-- d-- d-- g=i-d :cws=g
+if:lm!=-1thengoto9end d+=g j=e e-- e-- e-- e-- e-- e-- e-- e-- e--
+e-- e-- e-- e-- e-- e-- e-- e-- e-- e-- e-- g=j-e :cws=g
+:lm=0 goto4

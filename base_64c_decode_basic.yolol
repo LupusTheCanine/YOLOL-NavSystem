@@ -1,0 +1,17 @@
+//0 1 2 3  4 5 6 7
+//8 9 < >  A B C D
+//E F G H  I J K L
+//M N O P  Q R S T
+//U V W X  Y Z a b
+//c d e f  g h i j
+//k l m n  o p q r
+//s t u v  w x y z
+z = "zyxwvutsrqponmlkTSRQPONMLKJIHGFE"
+y = "zyxwvutsjihgfedcTSRQPONMDCBA><98"
+x = "zyxwrqpojihgbaZYTSRQLKJIDCBA7654"
+y = "zyvurqnmjifebaXWTSPOLKHGDC<>7632"
+v = "zxvtrpnljhfdbZXVTRPNLJHFDB>97531"
+i=:input if i=="" then goto 14 end o=0 b=1
+c=i c-=--i o=o*64+32*(c>"T")+16*(z>(z-c))+8*(y>(y-c))+4*(x>(x-c))
+o+=2*(y>(y-c))+(v>(v-c)) b*=64 if i!="" then goto 15 end :output=o-b/2
+:input="" goto 14

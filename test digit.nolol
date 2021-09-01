@@ -1,0 +1,12 @@
+input=64*5+31
+v64k=64000
+v64=64
+v1k=1000
+input/=1000
+loop>digit=(input-input/v64*v64)*v1k
+input/=v64
+goto loop
+
+loop2>digit = input - input / v64k * v64k
+ input= input / v64k * v1k
+goto loop2

@@ -7,11 +7,32 @@ macro popWP(str,result) block
         str--
         str--
         str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
+        str--
     result=temp-str
 end
 
 include "std/string"
 $string_pop(a,b)$
+:waypoints=""
+:waypoints+="WPT_04  000U000U100U"
+:waypoints+="WPT_03  000U100U000U"
+:waypoints+="WPT_02  100U000U000U"
+:waypoints+="WPT_01  000U000U000U"
 
 define :waypoints=:wp
 define :currentWaypointS=:cws

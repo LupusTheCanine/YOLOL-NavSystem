@@ -1,0 +1,79 @@
+# required: list of scripts to run in parallel. Can be as many as you like
+scripts: 
+  - base_64c_decode_basic.yolol
+# optional: stop execution once one of the listed global variables has the given value.
+# this is checked after every executed line, which means the line which sets the done-variable is executed completely before stopping the VM
+# default is "done: 1"
+stopwhen:
+  input: ""
+# optional: if true, ignore runtime-errors during script-execution. Default: false
+ignoreerrs: false
+# optional: Stop execution after running set amount of lines (per script)
+# default value is 2000. Set to -1 for unlimited
+maxlines: 100
+# the type of yolol-chip to use for executing the tests (auto, basic, advanced or professional). Default: auto
+chiptype: basic
+# required: list of testcases
+cases:
+  - name: Test -32
+    inputs:
+      input: "0"
+    outputs:
+        input: ""
+        output: -32
+  - name: Test 0
+    inputs:
+      input: "U"
+    outputs:
+        input: ""
+        output: 0
+  - name: Test 31
+    inputs:
+      input: "z"
+    outputs:
+        input: ""
+        output: 31
+  - name: Test 00
+    inputs:
+      input: "0U"
+    outputs:
+        input: ""
+        output: 0 
+  - name: Test 000
+    inputs:
+      input: "00U"
+    outputs:
+        input: ""
+        output: 0
+  - name: Test 0000
+    inputs:
+      input: "000U"
+    outputs:
+        input: ""
+        output: 0 
+  - name: Test 1
+    inputs:
+      input: "1U"
+    outputs:
+        input: ""
+        output: 1 
+  - name: Test zz
+    inputs:
+      input: "zz"
+    outputs:
+        input: ""
+        output: 2047
+  - name: Test 00
+    inputs:
+      input: "00"
+    outputs:
+        input: ""
+        output: -2048 
+  - name: Test 1b
+    inputs:
+      input: "100U"
+    outputs:
+        input: ""
+        output: 1
+
+ 
