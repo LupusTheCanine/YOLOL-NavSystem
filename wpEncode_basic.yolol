@@ -1,0 +1,16 @@
+a=1000 b=64000 :newWaypointName=""
+if:nwn==""thengoto2end c=:nwn d=:nwX e=:nwY f=:nwZ g=0
+ifg>=3thengoto16end
+h=(d*(g-1)*(g-2)/2+e*g*(2-g)+f*g/2*(g-1))/a*a+8388608 g++
+h=h*(h<16777216)*(h>0)+16777215*(h>=16777215) i=0
+ifi++>4thengoto3end j=h-h/b*b h=h/b*a goto7+(j>9)*(j-3)/7
+ifj<10thenc+=j end
+j-=10 c+="0<1>2A3B4C5D6E"-j-"6E"-"5D"-"4C"-"3B"-"2A"-"1>"-"0<" goto6
+j-=17 c+="0F1G2H3I4J5K6L"-j-"6L"-"5K"-"4J"-"3I"-"2H"-"1G"-"0F" goto6
+j-=24 c+="0M1N2O3P4Q5R6S"-j-"6S"-"5R"-"4Q"-"3P"-"2O"-"1N"-"0M" goto6
+j-=31 c+="0T1U2V3W4X5Y6Z"-j-"6Z"-"5Y"-"4X"-"3W"-"2V"-"1U"-"0T" goto6
+j-=38 c+="0a1b2c3d4e5f6g"-j-"6g"-"5f"-"4e"-"3d"-"2c"-"1b"-"0a" goto6
+j-=45 c+="0h1i2j3k4l5m6n"-j-"6n"-"5m"-"4l"-"3k"-"2j"-"1i"-"0h" goto6
+j-=52 c+="0o1p2q3r4s5t6u"-j-"6u"-"5t"-"4s"-"3r"-"2q"-"1p"-"0o" goto6
+j-=59 c+="0v1w2x3y4z"-j-"4z"-"3y"-"2x"-"1w"-"0v" goto6
+:nwS=c :nwn="" goto1

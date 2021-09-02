@@ -1,23 +1,23 @@
-//0 1 2 3 4 5 6 7
-//8 9 < > A B C D
-//E F G H I J K L
-//M N O P Q R S T
-//U V W X Y Z a b
-//c d e f g h i j
-//k l m n o p q r
-//s t u v w x y z
-//:input = 31 //8388608
 v1k=1000
 v64k=64000
-//while :input=="" do 
-//    input=0 
-//end 
-while :input=="" do
-end
-input = :input / v1k * v1k + 8388608 //remove decimal and convert to decimal coded 64 complement with
+:newWaypointName=""
+define :newWaypointName=:nwn
+define :newWaypointX=:nwX
+define :newWaypointY=:nwY
+define :newWaypointZ=:nwZ
+define :newWaypointString=:nwS
+while :nwn=="" do
+end 
+output=:newWaypointName
+newWaypointX=:newWaypointX
+newWaypointY=:newWaypointY
+newWaypointZ=:newWaypointZ
+select = 0
+while select<3 do
+input=(newWaypointX*(select-1)*(select-2)/2+newWaypointY*select*(2-select)+newWaypointZ*select/2*(select-1))  / v1k * v1k + 8388608 //remove decimal and convert to decimal coded 64 complement with
+select++
 input=input*(input<16777216)*(input>0)+16777215*(input>=16777215) //clamp input to from 0 to 64^4-1
 counter = 0
-output="" 
 loopstart>$if counter++>4 then goto loopterm end; digit = input - input / v64k * v64k; input= input / v64k * v1k; goto loopstart+1+(digit>9)*(digit-3)/7 $
     $if digit<10 then output+=digit end $
     $digit-=10; output+="0<1>2A3B4C5D6E"-digit-"6E"-"5D"-"4C"-"3B"-"2A"-"1>"-"0<";goto loopstart $
@@ -28,6 +28,7 @@ loopstart>$if counter++>4 then goto loopterm end; digit = input - input / v64k *
     $digit-=45; output+="0h1i2j3k4l5m6n"-digit-"6n"-"5m"-"4l"-"3k"-"2j"-"1i"-"0h";goto loopstart $
     $digit-=52; output+="0o1p2q3r4s5t6u"-digit-"6u"-"5t"-"4s"-"3r"-"2q"-"1p"-"0o";goto loopstart $
     $digit-=59; output+="0v1w2x3y4z"-digit-"4z"-"3y"-"2x"-"1w"-"0v";goto loopstart $
-loopterm> :input="" 
-:output=output
-goto start
+loopterm>
+end
+:newWaypointString=output
+:newWaypointName=""
